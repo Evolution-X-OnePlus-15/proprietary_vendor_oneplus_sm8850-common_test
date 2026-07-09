@@ -1609,6 +1609,7 @@ PRODUCT_PACKAGES += \
     init.qcrild \
     ipacm \
     ipacm-diag \
+    KmInstallKeybox \
     ks \
     loc_launcher \
     lowi-server \
