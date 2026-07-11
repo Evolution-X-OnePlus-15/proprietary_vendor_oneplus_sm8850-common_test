@@ -5,9 +5,12 @@
 soong_namespace {
     imports: [
         "device/oneplus/sm8850-common",
+        "device/oneplus/infiniti",
         "hardware/oplus",
         "hardware/qcom-caf/sm8850",
         "hardware/qcom-caf/wlan",
+        "vendor/oneplus/sm8850-common",
+        "vendor/oneplus/infiniti",
         "vendor/qcom/opensource/commonsys/display",
         "vendor/qcom/opensource/commonsys-intf/display",
         "vendor/qcom/opensource/dataservices",
@@ -6371,6 +6374,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libmodem_device_ids",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libmodem_device_ids.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libnspextensioncopyservice",
     owner: "oneplus",
     strip: {
@@ -7330,8 +7361,8 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "libbase",
                 "libbinder_ndk",
-                "vendor.pixelworks.hardware.feature@1.0_vendor",
-                "vendor.pixelworks.hardware.feature@1.1_vendor",
+                "vendor.pixelworks.hardware.feature@1.0",
+                "vendor.pixelworks.hardware.feature@1.1",
                 "vendor.pixelworks.hardware.feature@1.2",
                 "libc++",
                 "libc",
@@ -7365,9 +7396,9 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcutils",
                 "libhidlbase",
-                "vendor.pixelworks.hardware.display@1.0_vendor",
-                "vendor.pixelworks.hardware.display@1.1_vendor",
-                "vendor.pixelworks.hardware.display@1.2_vendor",
+                "vendor.pixelworks.hardware.display@1.0",
+                "vendor.pixelworks.hardware.display@1.1",
+                "vendor.pixelworks.hardware.display@1.2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7395,7 +7426,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libpwirisfeature_vendor",
+                "libpwirisfeature",
                 "libbase",
                 "libbinder_ndk",
                 "android.hardware.graphics.common-V7-ndk",
@@ -10053,7 +10084,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libsdedrm.so",
             ],
             shared_libs: [
-                "libpwirisfeature_vendor",
+                "libpwirisfeature",
                 "liblog",
                 "libcutils",
                 "libutils",
@@ -10204,7 +10235,7 @@ cc_prebuilt_library_shared {
                 "libpwirishardware_ext",
                 "vendor.pixelworks.hardware.display-V3-ndk",
                 "libpwirishalwrapper",
-                "libpwirisfeature_vendor",
+                "libpwirisfeature",
                 "liblog",
                 "libcutils",
                 "libutils",
@@ -10252,7 +10283,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbase",
-                "libpwirisfeature_vendor",
+                "libpwirisfeature",
                 "libpwirishal",
                 "liblog",
                 "libcutils",
@@ -10292,7 +10323,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libsdmdal.so",
             ],
             shared_libs: [
-                "libpwirisfeature_vendor",
+                "libpwirisfeature",
                 "liblog",
                 "libcutils",
                 "libutils",
@@ -12385,6 +12416,76 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libui-stock",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libui-stock.so",
+            ],
+            shared_libs: [
+                "android.hardware.graphics.allocator@2.0",
+                "android.hardware.graphics.allocator@3.0",
+                "android.hardware.graphics.allocator@4.0",
+                "android.hardware.graphics.common@1.2",
+                "android.hardware.graphics.mapper@2.0",
+                "android.hardware.graphics.mapper@2.1",
+                "android.hardware.graphics.mapper@3.0",
+                "android.hardware.graphics.mapper@4.0",
+                "libbase",
+                "libbinder_ndk",
+                "libcutils",
+                "libgralloctypes",
+                "libhidlbase",
+                "libsync",
+                "libutils",
+                "liblog",
+                "libvndksupport",
+                "android.hardware.graphics.common-V7-ndk",
+                "android.hardware.graphics.allocator-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libutils-stock",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libutils-stock.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libvndksupport",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libvideooptfeature",
     owner: "oneplus",
     strip: {
@@ -13684,7 +13785,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.pixelworks.hardware.display@1.1.so",
             ],
             shared_libs: [
-                "vendor.pixelworks.hardware.display@1.0_vendor",
+                "vendor.pixelworks.hardware.display@1.0",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -13713,8 +13814,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.pixelworks.hardware.display@1.2.so",
             ],
             shared_libs: [
-                "vendor.pixelworks.hardware.display@1.0_vendor",
-                "vendor.pixelworks.hardware.display@1.1_vendor",
+                "vendor.pixelworks.hardware.display@1.0",
+                "vendor.pixelworks.hardware.display@1.1",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -13796,7 +13897,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.pixelworks.hardware.feature@1.1.so",
             ],
             shared_libs: [
-                "vendor.pixelworks.hardware.feature@1.0_vendor",
+                "vendor.pixelworks.hardware.feature@1.0",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -13825,8 +13926,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.pixelworks.hardware.feature@1.2.so",
             ],
             shared_libs: [
-                "vendor.pixelworks.hardware.feature@1.0_vendor",
-                "vendor.pixelworks.hardware.feature@1.1_vendor",
+                "vendor.pixelworks.hardware.feature@1.0",
+                "vendor.pixelworks.hardware.feature@1.1",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -17412,6 +17513,36 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libsharebuffer_impl",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libsharebuffer_impl.so",
+            ],
+            shared_libs: [
+                "libdmabufheap",
+                "libnativewindow",
+                "libui-stock",
+                "libutils-stock",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libstc_color_feature",
     owner: "oneplus",
     strip: {
@@ -18073,6 +18204,32 @@ cc_prebuilt_binary {
                 "libc",
                 "libm",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "KmInstallKeybox",
+    owner: "oneplus",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/KmInstallKeybox",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "liblog",
+                "libc",
+                "libminkdescriptor",
+                "libmodem_device_ids",
+                "libcrypto",
             ],
         },
     },
@@ -29185,33 +29342,6 @@ cc_prebuilt_binary {
                 "liblog",
                 "libc++",
                 "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "KmInstallKeybox",
-    owner: "oneplus",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/KmInstallKeybox",
-            ],
-            shared_libs: [
-                "libc",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
                 "libm",
                 "libdl",
             ],

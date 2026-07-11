@@ -6,7 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/oneplus/sm8850-common
 
 PRODUCT_COPY_FILES += \
-    vendor/oneplus/sm8850-common/proprietary/odm/etc/camera/media_profiles.xml:$(TARGET_COPY_OUT_ODM)/etc/camera/media_profiles.xml \
     vendor/oneplus/sm8850-common/proprietary/odm/etc/charge.cfg:$(TARGET_COPY_OUT_ODM)/etc/charge.cfg \
     vendor/oneplus/sm8850-common/proprietary/odm/etc/init/hw/init.oplus.display.rc:$(TARGET_COPY_OUT_ODM)/etc/init/hw/init.oplus.display.rc \
     vendor/oneplus/sm8850-common/proprietary/odm/etc/init/hw/init.oplus.wifi.rc:$(TARGET_COPY_OUT_ODM)/etc/init/hw/init.oplus.wifi.rc \
@@ -163,8 +162,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_canoe_v1_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_canoe_v1_vendor.xml \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_canoe_v2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_canoe_v2.xml \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_canoe_v2_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_canoe_v2_vendor.xml \
-    vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_canoe_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_canoe_v3.xml \
-    vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_canoe_v3_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_canoe_v3_vendor.xml \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_dolby_vision.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_vision.xml \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_performance_canoe_sku1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_canoe_sku1.xml \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/media_codecs_performance_canoe_sku1_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_canoe_sku1_vendor.xml \
@@ -236,7 +233,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/seccomp_policy/wfdhdcphalservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/wfdhdcphalservice.policy \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/seccomp_policy/wfdvndservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/wfdvndservice.policy \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/seccomp_policy/wifidisplayhalservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/wifidisplayhalservice.policy \
-    vendor/oneplus/sm8850-common/proprietary/vendor/etc/sensors/config/chre_dynamic_sensors.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/chre_dynamic_sensors.json \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/sensors/config/json.lst:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/json.lst \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/sensors/config/kaanapali_bu52053nvx_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kaanapali_bu52053nvx_0.json \
     vendor/oneplus/sm8850-common/proprietary/vendor/etc/sensors/config/kaanapali_ccd_base.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/kaanapali_ccd_base.json \
@@ -568,6 +564,7 @@ PRODUCT_PACKAGES += \
     libmmosal_vendor \
     libmmrtpdecoder_vendor \
     libmmrtpencoder_vendor \
+    libmodem_device_ids \
     libnspextensioncopyservice \
     libnspextensionfrcservice \
     libnspextensiongenericqnnservice \
@@ -766,6 +763,8 @@ PRODUCT_PACKAGES += \
     libtime_genoff \
     libtinyxml2_1 \
     libtrustedapploader \
+    libui-stock \
+    libutils-stock \
     libvideooptfeature \
     libvideotxr \
     libvideoutils \
@@ -939,6 +938,7 @@ PRODUCT_PACKAGES += \
     libqcodec2_dolbydecoderfilter \
     libqcodec2_dolbyencoderfilter \
     libsensorbridge \
+    libsharebuffer_impl \
     libstc_color_feature \
     vendor.oplus.hardware.displaycolorfeature-V1-ndk \
     com.google.android.widevine.nonupdatable \
@@ -1005,6 +1005,7 @@ PRODUCT_PACKAGES += \
     manifest_touch_aidl.xml \
     vintf_manifext_aidl_panelchaplin.xml \
     C2PAInternetService \
+    KmInstallKeybox \
     adsprpcd \
     audioadsprpcd \
     cdsprpcd \
@@ -1609,7 +1610,6 @@ PRODUCT_PACKAGES += \
     init.qcrild \
     ipacm \
     ipacm-diag \
-    KmInstallKeybox \
     ks \
     loc_launcher \
     lowi-server \
